@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Nikitha's Page</title>
+    </head>
+ 
+<body>
+
+<h2>Hidden things by Nikitha Madhari</h2>
+
+<form>
+    <label for="form1_secret">What is your age </label>
+    <input type ="password" id="form1_secret" name="form1_secret" min=10 max=50 step=2 value="secret"> <br>
+
+    <label for="form1_guessword">What is your nickname </label>
+    <input type ="text" id="form1_guessword" name="form1_guessword" autofocus> <br>
+
+    <input type="button" onclick="processGuess()" value="Check the guess">
+</form>
+
+
+<p id="result">Check the result here</p>
+
+<script> 
+var correct = 0;
+var wrong= 0;
+function processGuess(){
+    console.log("Getting form values")
+    secret = document.getElementById("form1_secret").value
+    guessword = document.getElementById("form1_guessword").value
+    //confirmed = confirm("Are these the values? "+age+" and "+nick)
+    
+    out = document.getElementById("result")
+    if(secret==guessword){
+        correct+=1;
+        alert("Congratulations");
+        out.innerHTML = "Success Attempts: " + correct
+    } else {
+        wrong+=1;
+        alert("Sorry");
+        out.innerHTML = "Wrong Attempts: " + wrong
+    }
+}
+</script>
+<div class="container">
+    <img id="plantImage" src="rose.jpg" alt="connection error" width="200" height="200" onclick="rotateImage()">
+</div>
+<script>
+    var imageCount = 0;
+    function rotateImage(){
+        switch(imageCount){
+            case 0: 
+                imageCount+=1;
+                document.getElementById("plantImage").src = "rose.jpg"
+                break;
+            case 1:
+                imageCount+=1;
+                document.getElementById("plantImage").src = "datura.jpg"
+                break;
+            case 2:
+                imageCount+=1;
+                document.getElementById("plantImage").src = "download.jpg"
+                break;
+            default:
+                imageCount = 0
+                document.getElementById("plantImage").src = "rose.jpg"
+        }
+    }
+</script>
+</body>
+</html> 
