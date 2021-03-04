@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <html lang="en">
+    <head>
+        <title>Arithmetic</title>
+        <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    </head>
+ 
+<body>
+
+<h2>Narsing Rao Nikitha Madhari Computes</h2>
+<div class = "container bg-success">
+    <form>
+    <label for="first_number1">Enter a number </label>
+    <input type ="number" id="first_number1" name="first_number1" min=10 max=50 step=2 value=10> <br>
+
+    <label for="Second_number2">Enter a number </label>
+    <input type ="number" id="Second_number2" name="Second_number2" autofocus value=2> <br>
+
+    <input type="button" onclick="permutations()" value="compute">
+</form>
+</div>
+<div>
+<p class = "container text-danger" id="result">This text will be replaced </p>
+</div>
+<script> 
+
+function permutations (){
+    
+    num1 = document.getElementById("first_number1").value
+    num2 = document.getElementById("Second_number2").value
+    let product =1
+    for( first =num1 ; first>=(num1-num2 +1); first--)
+    {
+        product = product * first
+    }
+    
+    document.getElementById("result").innerHTML = num1 + " permute "+num2 +" should be "+product
+}
+</script>
+<div class = "container bg-success">
+<form>
+    <input type ="radio" id = "add" name = "arith_oper" onclick="processRadio()">
+    <label for ="add" >+</label><br>
+    <input type ="radio" id = "minus" name = "arith_oper" onclick="processRadio()">
+    <label for ="minus" >-</label><br>
+    <input type ="radio" id = "multiply" name = "arith_oper" onclick="processRadio()">
+    <label for ="multiply" >*</label><br>
+    <input type ="radio" id = "devide" name = "arith_oper" onclick="processRadio()">
+    <label for ="devide" >/</label><br>
+
+</form>
+</div>
+<div>
+<p class = "container text-danger" id = "res">Results of Radio buttons will be shown here</p>
+</div>
+<script>
+    function processRadio(){
+        num1 = document.getElementById("first_number1").value
+         num2 = document.getElementById("Second_number2").value
+         result = 0
+         text = ""
+        if(document.getElementById("add").checked == true)
+        {
+            result = +num1 + +num2
+            text = "sum of " +num1+" and " +num2+ " is "+result
+        }
+       else if(document.getElementById("minus").checked == true)
+        {
+            result = num1 - num2
+            text = "Difference of " +num1+" and " +num2+ " is "+result
+        }
+        else if(document.getElementById("multiply").checked == true)
+        {
+            result = num1  * num2
+            text = "Product of " +num1+" and " +num2+ " is "+result
+        }
+        else if(document.getElementById("devide").checked =true)
+        {
+            result = num1/num2
+            text = "Division of " +num1+" and " +num2+ " is "+result
+        }
+        document.getElementById("res").innerHTML = text
+
+    }
+</script>
+</body>
+</html>
