@@ -4,13 +4,17 @@
      <title>
          building bear
      </title>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
      <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
 <body>
 
 <h1>Narsing Rao Nikitha Madhari builds a bear</h1>
-<div class = "container border bg-dark">
+<div class = "container">
 <form>
     <input type ="checkbox" id="box1" name="box1" value="hat" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">
     <label for="box1">hat </label><br>
@@ -21,11 +25,10 @@
     <input type ="checkbox" id="box3" name="box3" value="shirt" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">
     <label for="box3">shirt </label><br>
 
-    <input type="button" onclick="startBear()" value="Start a bear" >
+    <input type="button" onclick="startBear()" value="Start a bear" class="btn btn-success">
     <br>
 </form>
-</div>
-<div class = "container bg-light border" >
+
 <form>
     <label for = "text1" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">Enter a property</label>
     <input type ="text" id = "text1" name ="text1" value ="color"><br>
@@ -33,12 +36,12 @@
     <label for = "text2" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">Enter a value</label>
     <input type ="text" id = "text2" name ="text2"><br>
 
-    <input type ="button" onclick="updatebear()" value ="Update the bear">
+    <input type ="button" onclick="updatebear()" value ="Update the bear" class="btn btn-success">
 </form>
-</div>
-<div class = "container text-warning">
+
+
 <p id="result" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">This text will be replaced </p>
-</div>
+
 <script> 
 
 var my_bear = {}
@@ -69,5 +72,6 @@ function updatebear(){
         console.log(my_bear)
     }
 </script>
+</div>
 </body>
 </html> 
